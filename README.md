@@ -1,0 +1,2 @@
+# pipeline-example
+Example pipeline
