@@ -1,0 +1,33 @@
+---
+title: "LOTR R Markdown file"
+author: |
+  | Benjamin Soltoff
+  | MACS 30500 - Computing for the Social Sciences
+  | University of Chicago
+output:
+  html_document:
+    keep_md: yes
+---
+
+This is an R Markdown document. In this example, its purpose is to allow us to demonstrate how to use `rmarkdown::render()` without the help of RStudio's buttons.
+
+```{r setup, include = FALSE}
+library(tidyverse)
+library(feather)
+
+lotr_dat <- read_feather("data/lotr_clean.feather")
+```
+
+Here is a plot we are making "on the fly" via code in an R chunk.
+
+```{r stripplot, echo = FALSE}
+ggplot(lotr_dat, aes(x = Race, y = Words)) +
+  facet_wrap(~ Film) +
+  scale_y_log10() +
+  ggtitle("The Lord of the Rings (made from code in R Markdown") + 
+  geom_jitter(alpha = 1/2, position = position_jitter(width = 0.1))
+```
+
+Here is a pre-made plot we are merely embedding in the compiled document.
+
+![Barchart of Total Words by Race](graphics/barchart_total-words-by-race.png)
