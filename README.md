@@ -2,7 +2,7 @@
 
 This is a toy example of a reproducible data pipeline, based on Jenny Bryan's example for [STAT 545A](http://stat545-ubc.github.io).
 
-This shows how to create a small-but-automated analytical pipeline using a set of R scripts via `source()` AND using `rmarkdown::render()` on plain R scripts and R Markdown files, *without* the help of RStudio's buttons.
+This shows how to create a small-but-automated analytical pipeline using a set of R scripts via `source()` AND using `rmarkdown::render()` on R Markdown files, *without* the help of RStudio's buttons.
 
 Demonstration data: the number of words spoken by various characters in the Lord of the Rings trilogy, available here:
 
