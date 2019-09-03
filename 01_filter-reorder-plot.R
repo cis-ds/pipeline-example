@@ -21,7 +21,7 @@ lotr_dat <- lotr_dat %>%
   mutate(Film = factor(Film),
          Race = plyr::revalue(Race, c(Ainur = "Wizard", Men = "Man"))) %>%
   filter(!(Race %in% c("Gollum", "Ent", "Dead", "Nazgul"))) %>%
-  mutate(Race = fct_reorder(Race, Words, fun = sum)) %>%
+  mutate(Race = fct_reorder(Race, Words, .fun = sum)) %>%
   arrange(Race, Film, Words) %>%
   droplevels()
 
